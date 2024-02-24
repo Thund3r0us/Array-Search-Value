@@ -1,6 +1,14 @@
 #include <stdio.h>
 
 int search(int numbers[], int low, int high, int value) {
+    if (n == 1) {
+	    return (array[0] < max); }
+    if (array[n-1] > max) {
+		return 0; }
+	return isSorted(array, array[n-1], n - 1);
+
+  
+  
   return -1;
 }
 
