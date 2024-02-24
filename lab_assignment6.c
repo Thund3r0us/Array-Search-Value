@@ -1,13 +1,28 @@
 #include <stdio.h>
 
 int search(int numbers[], int low, int high, int value) {
-    if (n == 1) {
-	    return (array[0] < max); }
-    if (array[n-1] > max) {
-		return 0; }
-	return isSorted(array, array[n-1], n - 1);
+  // Base case: value is not found
+  if (low > high) {
+    return -1;
+  }
 
-  
+  // Find the middle value
+  int mid = (high - low) + low / 2;
+
+  // Return mid if the middle value is the value we are looking for
+  if (numbers[mid] == value) {
+    return mid;
+  }
+
+  // If the middle number is lower than our value, recurse with the upper half
+  else if (numbers[mid] < value) {
+    return search(numbers, mid + 1, high, value);
+  }
+
+  // If the middle number is higher than our value, recurse with the lower half
+  else {
+    return search(numbers, low, mid - 1, value);
+  }
   
   return -1;
 }
